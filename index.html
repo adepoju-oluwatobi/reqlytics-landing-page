@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📊 Reqlytics – Real-Time API Analytics for All Frameworks</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%22.9em%22 font-size=%2216%22>📊</text></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-white to-blue-50 text-gray-800 font-sans leading-relaxed">
+
+  <!-- GitHub CTA -->
+  <div class="bg-gray-800 text-white text-center py-3 px-4">
+    <p class="text-sm sm:text-base flex flex-col sm:flex-row justify-center items-center gap-2">
+      ⭐ If you like Reqlytics, consider 
+      <a href="https://github.com/your-github/reqlytics" target="_blank" rel="noopener noreferrer"
+         class="bg-yellow-400 text-gray-800 font-semibold py-1 px-3 rounded hover:bg-yellow-300 transition">
+        starring us on GitHub
+      </a>
+    </p>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <div class="inline-flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-3 bg-blue-100 px-6 py-3 rounded-full shadow">
+        <span class="text-4xl">📊</span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-700">Reqlytics</h1>
+      </div>
+      <p class="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">
+        Real-Time API Analytics Middleware — Monitor API usage effortlessly across multiple backend frameworks.
+      </p>
+      <p class="text-sm sm:text-base text-gray-700 mt-2 max-w-2xl mx-auto italic">
+        Currently supports <strong>Express.js (Node.js)</strong> — expanding soon to support <strong>Python (Flask, FastAPI), Ruby, PHP</strong> and more.
+      </p>
+    </header>
+
+    <!-- Features -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">🚀 Features</h2>
+      <ul class="list-disc ml-6 space-y-1 text-base">
+        <li>✅ Easy integration with Express.js (more frameworks coming soon)</li>
+        <li>📈 Tracks endpoint, method, response time & status</li>
+        <li>🛠️ Works with both ESM and CommonJS</li>
+        <li>🔐 Secured with your unique API Key</li>
+        <li>📊 Visual analytics dashboard</li>
+        <li>⚡ Lightweight & production ready</li>
+        <li>🌍 Framework-agnostic architecture (ongoing integrations)</li>
+      </ul>
+    </section>
+
+    <!-- Installation -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">📦 Installation (Express.js)</h2>
+      <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm">
+npm install reqlytics
+      </pre>
+    </section>
+
+    <!-- Usage -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">📌 Basic Usage in Express.js</h2>
+
+      <h3 class="font-semibold text-lg mb-2">1. Import the middleware</h3>
+      <p class="font-mono text-sm bg-gray-100 p-2 rounded mb-2">ESM:</p>
+      <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm">
+import { apiAnalytics } from "reqlytics";
+      </pre>
+
+      <p class="font-mono text-sm bg-gray-100 p-2 rounded mt-4 mb-2">CommonJS:</p>
+      <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm">
+const apiAnalytics = require("reqlytics");
+      </pre>
+
+      <h3 class="font-semibold text-lg mt-6 mb-2">2. Use it in your Express app</h3>
+      <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm">
+const express = require("express");
+const app = express();
+
+const apiAnalytics = require("reqlytics");
+const API_KEY = "your_api_key_here";
+
+app.use(apiAnalytics(API_KEY, { debug: true }));
+
+app.get("/api/hello", (req, res) => {
+  res.json({ message: "Hello from Reqlytics!" });
+});
+
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});
+      </pre>
+    </section>
+
+    <!-- Config Table -->
+    <section class="mb-10 overflow-x-auto">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">⚙️ Middleware Options</h2>
+      <table class="table-auto w-full text-sm border border-gray-200 min-w-max">
+        <thead class="bg-blue-100">
+          <tr>
+            <th class="border px-4 py-2 text-left">Option</th>
+            <th class="border px-4 py-2 text-left">Type</th>
+            <th class="border px-4 py-2 text-left">Default</th>
+            <th class="border px-4 py-2 text-left">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border px-4 py-2">endpoint</td>
+            <td class="border px-4 py-2">string</td>
+            <td class="border px-4 py-2">https://reqlytics-api.onrender.com/api/v1/track</td>
+            <td class="border px-4 py-2">Tracking endpoint</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">timeout</td>
+            <td class="border px-4 py-2">number</td>
+            <td class="border px-4 py-2">2000</td>
+            <td class="border px-4 py-2">Request timeout in ms</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">debug</td>
+            <td class="border px-4 py-2">boolean</td>
+            <td class="border px-4 py-2">false</td>
+            <td class="border px-4 py-2">Log output to console</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- API Key -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">🔐 Get Your API Key</h2>
+      <ol class="list-decimal ml-6 space-y-1 text-base">
+        <li>Visit <a href="https://reqlytics-insight-dash.vercel.app" class="text-blue-600 hover:underline">https://reqlytics-insight-dash.vercel.app</a></li>
+        <li>Sign up and log in</li>
+        <li>Copy your API key from the dashboard</li>
+        <li>Use it in your backend project</li>
+      </ol>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">📊 Dashboard Preview</h2>
+      <ul class="list-disc ml-6 space-y-1 text-base">
+        <li>View requests by endpoint</li>
+        <li>Monitor error rates</li>
+        <li>Analyze daily usage trends</li>
+        <li>Check average response times</li>
+        <li>Track response status and frequency</li>
+      </ul>
+    </section>
+
+    <!-- Support -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">💬 Support</h2>
+      <p class="text-base">Have questions or found a bug?</p>
+      <p class="text-base">📧 <a href="mailto:kunletobi4@gmail.com" class="text-blue-600 hover:underline">kunletobi4@gmail.com</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs text-gray-500 mt-16">
+      <p>MIT License © 2025 – Reqlytics Team</p>
+      <p>Built with ❤️ for developers who care about insights.</p>
+    </footer>
+  </div>
+</body>
+</html>
