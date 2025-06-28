@@ -9,6 +9,17 @@
 </head>
 <body class="bg-gradient-to-br from-white to-blue-50 text-gray-800 font-sans leading-relaxed">
 
+  <!-- GitHub CTA -->
+  <div class="bg-gray-800 text-white text-center py-3 px-4">
+    <p class="text-sm sm:text-base flex flex-col sm:flex-row justify-center items-center gap-2">
+      ⭐ If you like Reqlytics, consider 
+      <a href="https://github.com/adepoju-oluwatobi" target="_blank" rel="noopener noreferrer"
+         class="bg-yellow-400 text-gray-800 font-semibold py-1 px-3 rounded hover:bg-yellow-300 transition">
+        starring us on GitHub
+      </a>
+    </p>
+  </div>
+
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
     <!-- Header -->
     <header class="text-center mb-12">
@@ -20,57 +31,17 @@
         Real-Time API Analytics Middleware — Monitor API usage effortlessly across multiple backend frameworks.
       </p>
       <p class="text-sm sm:text-base text-gray-700 mt-2 max-w-2xl mx-auto italic">
-        Currently supports <strong>Express.js (Node.js) — expanding soon to support <strong>FastAPI, Flask,  Ruby, PHP</strong> and more.
+        Currently supports <strong>Express.js (Node.js)</strong> — expanding soon to support <strong>Python (Flask, FastAPI), Ruby, PHP</strong> and more.
       </p>
     </header>
-
-    <!-- Pricing -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">💰 Pricing</h2>
-      <p class="text-gray-600 mb-6 text-base max-w-2xl mx-auto">
-        Choose a plan to start monitoring your APIs. Get started for free or upgrade for unlimited analytics.
-        Visit <a href="https://reqlytics-insight-dash.vercel.app" class="text-blue-600 hover:underline">our dashboard</a> for full pricing details.
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Free Plan -->
-        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 class="text-xl font-semibold text-blue-700 mb-2">Free Plan</h3>
-          <p class="text-gray-600 mb-4">Perfect for small projects or testing.</p>
-          <p class="text-2xl font-bold text-blue-600 mb-4">$0/month</p>
-          <ul class="list-disc ml-6 space-y-1 text-base">
-            <li>Up to 100 requests/day</li>
-            <li>Real-time analytics</li>
-            <li>Basic dashboard access</li>
-          </ul>
-          <a href="https://reqlytics-insight-dash.vercel.app" class="mt-6 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
-            Get Started
-          </a>
-        </div>
-        <!-- Pro Plan -->
-        <div class="bg-white p-6 rounded-lg shadow-md border border-blue-600">
-          <h3 class="text-xl font-semibold text-blue-700 mb-2">Pro Plan</h3>
-          <p class="text-gray-600 mb-4">Ideal for production apps with high traffic.</p>
-          <p class="text-2xl font-bold text-blue-600 mb-4">$9/month</p>
-          <ul class="list-disc ml-6 space-y-1 text-base">
-            <li>Unlimited requests</li>
-            <li>Real-time analytics</li>
-            <li>Advanced dashboard features</li>
-            <li>Priority support</li>
-          </ul>
-          <a href="https://reqlytics-insight-dash.vercel.app" class="mt-6 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
-            Upgrade to Pro
-          </a>
-        </div>
-      </div>
-    </section>
 
     <!-- Features -->
     <section class="mb-10">
       <h2 class="text-2xl font-semibold text-blue-600 mb-4">🚀 Features</h2>
       <ul class="list-disc ml-6 space-y-1 text-base">
-        <li>✅ Easy integration with Express.js and Flask (more frameworks coming soon)</li>
+        <li>✅ Easy integration with Express.js (more frameworks coming soon)</li>
         <li>📈 Tracks endpoint, method, response time & status</li>
-        <li>🛠️ Works with both ESM and CommonJS for Node.js</li>
+        <li>🛠️ Works with both ESM and CommonJS</li>
         <li>🔐 Secured with your unique API Key</li>
         <li>📊 Visual analytics dashboard</li>
         <li>⚡ Lightweight & production ready</li>
@@ -80,31 +51,28 @@
 
     <!-- Installation -->
     <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">📦 Installation</h2>
-      <h3 class="font-semibold text-lg mb-2">Express.js (Node.js)</h3>
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">📦 Installation (Express.js)</h2>
       <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm">
 npm install reqlytics
-      </pre>
-      <h3 class="font-semibold text-lg mt-6 mb-2">Flask (Python)</h3>
-      <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm">
-pip install reqlytics
       </pre>
     </section>
 
     <!-- Usage -->
     <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">📌 Basic Usage</h2>
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">📌 Basic Usage in Express.js</h2>
 
-      <h3 class="font-semibold text-lg mb-2">1. Express.js (Node.js)</h3>
+      <h3 class="font-semibold text-lg mb-2">1. Import the middleware</h3>
       <p class="font-mono text-sm bg-gray-100 p-2 rounded mb-2">ESM:</p>
       <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm">
 import { apiAnalytics } from "reqlytics";
       </pre>
+
       <p class="font-mono text-sm bg-gray-100 p-2 rounded mt-4 mb-2">CommonJS:</p>
       <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm">
 const apiAnalytics = require("reqlytics");
       </pre>
-      <h3 class="font-semibold text-lg mt-6 mb-2">2. Use in Express app</h3>
+
+      <h3 class="font-semibold text-lg mt-6 mb-2">2. Use it in your Express app</h3>
       <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm">
 const express = require("express");
 const app = express();
@@ -121,27 +89,6 @@ app.get("/api/hello", (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });
-      </pre>
-
-      <h3 class="font-semibold text-lg mt-6 mb-2">3. Flask (Python)</h3>
-      <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm">
-from flask import Flask
-from reqlytics import init_reqlytics
-
-app = Flask(__name__)
-
-init_reqlytics(
-    app,
-    api_key="your_api_key_here",
-    debug=True
-)
-
-@app.route("/example")
-def example():
-    return {"message": "Hello from Reqlytics!"}
-
-if __name__ == "__main__":
-    app.run(debug=True)
       </pre>
     </section>
 
@@ -185,7 +132,7 @@ if __name__ == "__main__":
       <h2 class="text-2xl font-semibold text-blue-600 mb-4">🔐 Get Your API Key</h2>
       <ol class="list-decimal ml-6 space-y-1 text-base">
         <li>Visit <a href="https://reqlytics-insight-dash.vercel.app" class="text-blue-600 hover:underline">https://reqlytics-insight-dash.vercel.app</a></li>
-        <li>Sign up for a free or pro plan</li>
+        <li>Sign up and log in</li>
         <li>Copy your API key from the dashboard</li>
         <li>Use it in your backend project</li>
       </ol>
@@ -212,7 +159,7 @@ if __name__ == "__main__":
 
     <!-- Footer -->
     <footer class="text-center text-xs text-gray-500 mt-16">
-      <p>© 2025 Reqlytics Team. All rights reserved.</p>
+      <p>MIT License © 2025 – Reqlytics Team</p>
       <p>Built with ❤️ for developers who care about insights.</p>
     </footer>
   </div>
